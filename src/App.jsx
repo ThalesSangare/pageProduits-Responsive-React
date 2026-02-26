@@ -1,10 +1,12 @@
 import "./App.css";
 import ListeProduits from "./components/ListeProduits.jsx";
+import NavBar from "./components/NavBar.jsx";
 
 function App() {
   return (
     <>
-        <ListeProduits />
+      <NavBar />
+      <ListeProduits />
     </>
   );
 }
