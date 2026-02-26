@@ -1,47 +1,102 @@
 import CardsProduits from "./CardsProduits";
+import img1 from "../assets/1.webp";
+import img2 from "../assets/2.webp";
+import img3 from "../assets/3.webp";
+import img4 from "../assets/4.webp";
+import img5 from "../assets/5.webp";
 
 const produits = [
   {
     id: 1,
     nom: "Produit 1",
     prix: 10000,
-    description: "Description du produit 1",
-    image: "https://via.placeholder.com/150",
+    description:
+      "Description du produit 1, Description du produit 6Description du produit 6",
+    image: img1,
   },
   {
     id: 2,
     nom: "Produit 2",
     prix: 20000,
     description: "Description du produit 2",
-    image: "https://via.placeholder.com/150",
+    image: img2,
   },
   {
     id: 3,
     nom: "Produit 3",
     prix: 30000,
     description: "Description du produit 3",
-    image: "https://via.placeholder.com/150",
+    image: img3,
   },
   {
     id: 4,
     nom: "Produit 4",
     prix: 40000,
     description: "Description du produit 4",
-    image: "https://via.placeholder.com/150",
+    image: img4,
   },
   {
     id: 5,
     nom: "Produit 5",
     prix: 50000,
     description: "Description du produit 5",
-    image: "https://via.placeholder.com/150",
+    image: img5,
   },
   {
     id: 6,
     nom: "Produit 6",
     prix: 60000,
     description: "Description du produit 6",
-    image: "https://via.placeholder.com/150",
+    image: img3,
+  },
+  {
+    id: 7,
+    nom: "Produit 7",
+    prix: 70000,
+    description: "Description du produit 7",
+    image: img4,
+  },
+  {
+    id: 8,
+    nom: "Produit 6",
+    prix: 60000,
+    description: "Description du produit 6",
+    image: img1,
+  },
+  {
+    id: 9,
+    nom: "Produit 7",
+    prix: 70000,
+    description: "Description du produit 7",
+    image: img2,
+  },
+  {
+    id: 10,
+    nom: "Produit 6",
+    prix: 60000,
+    description: "Description du produit 6",
+    image: img3,
+  },
+  {
+    id: 11,
+    nom: "Produit 7",
+    prix: 70000,
+    description: "Description du produit 7",
+    image: img4,
+  },
+  {
+    id: 12,
+    nom: "Produit 6",
+    prix: 60000,
+    description: "Description du produit 6",
+    image: img5,
+  },
+  {
+    id: 13,
+    nom: "Produit 7",
+    prix: 70000,
+    description: "Description du produit 7",
+    image: img4,
   },
 ];
 
