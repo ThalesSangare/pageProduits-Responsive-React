@@ -10,8 +10,7 @@ const produits = [
     id: 1,
     nom: "Produit 1",
     prix: 10000,
-    description:
-      "Description du produit 1, Description du produit 6Description du produit 6",
+    description: "Description du produit 1",
     image: img1,
   },
   {

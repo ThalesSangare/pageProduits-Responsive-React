@@ -13,12 +13,13 @@ function NavBar() {
   // etat du menu pour gerer l'affichage sur mobile
   const [menuOuvert, setMenuOuvert] = useState(false);
   return (
-    // <div className="hidden md:flex px-6 py-4 bg-cyan-950 mb-8">
     <div className="relative max-w-7xl mx-auto flex items-center px-6 py-4 mb-8">
       {/* LOGO */}
       <div className="flex-1 flex">
         <HandCoins />
-        <h1 className="ml-2 text-sm md:text-xl text-accent font-bold">E-commerce</h1>
+        <h1 className="ml-2 text-sm md:text-xl text-accent font-bold">
+          E-commerce
+        </h1>
       </div>
 
       {/* LIENS */}
