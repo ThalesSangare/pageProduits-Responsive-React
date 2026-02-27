@@ -1,0 +1,32 @@
+truncate vs line-clamp
+============== truncate
+<h3 className="text-sm truncate">
+  {produit.nom}
+</h3>
+
+++ Limite le texte à une seule ligne et ajoute … si c’est trop long
+
+++ Super simple, pas besoin de plugin
+
+-- Limité à une ligne, si tu veux montrer 2-3 lignes, ce n’est pas suffisant
+
+
+===========   line-clamp (plugin Tailwind)
+
+Exemple :
+
+<p className="text-gray-600 line-clamp-3">
+  {produit.description}
+</p>
+
+++ Limite le texte à un nombre précis de lignes
+
+++ Ajoute automatiquement … si le texte dépasse
+
+-- Il faut activer le plugin Tailwind CSS : @tailwindcss/line-clamp
+
+2️- Ajouter @tailwindcss/line-clamp
+
+1- Installer le plugin :
+
+npm install @tailwindcss/line-clamp
