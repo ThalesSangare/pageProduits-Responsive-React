@@ -107,7 +107,7 @@ function Footer() {
 
       {/* Barre du bas */}
       <div className="border-t border-base-300 text-center py-4 text-sm">
-        © {new Date().getFullYear()} E-commerce — Tous droits réservés
+        © {new Date().getFullYear()} Thales - E-commerce — Tous droits réservés
       </div>
     </footer>
   );
