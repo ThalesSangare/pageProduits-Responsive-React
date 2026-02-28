@@ -118,7 +118,7 @@
 import { useState, useEffect } from "react";
 import CardsProduits from "./CardsProduits";
 
-function ListeProduits() {
+function ListeProduits({ limite }) {
   //  State pour stocker les produits récupérés depuis l'API
   const [produits, setProduits] = useState([]);
 
@@ -153,11 +153,13 @@ function ListeProduits() {
     //  Affichage pendant le chargement
     return <div className="text-center py-20">Chargement des produits...</div>;
   }
+  //  Si limite existe = on slice
+  const produitsAffiches = limite ? produits.slice(0, limite) : produits;
 
   return (
     //  Flex wrap pour que la grille s'adapte à l'écran
     <div className="flex gap-4 justify-center flex-wrap">
-      {produits.map((produit) => (
+      {produitsAffiches.map((produit) => (
         //  On passe chaque produit à CardsProduits
         <CardsProduits key={produit.id} produits={produit} />
       ))}
