@@ -18,7 +18,7 @@ function NavBar() {
       <div className="flex-1 flex">
         <HandCoins />
         <h1 className="ml-2 text-sm md:text-xl text-accent font-bold">
-          E-commerce
+          SmartMarket
         </h1>
       </div>
 
