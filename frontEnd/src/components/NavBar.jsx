@@ -1,6 +1,7 @@
 import { HandCoins, Menu, Search, ShoppingCart, UserRound } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Recherche from "./recherche/Recherche";
 
 const liens = [
   { nom: "Accueil", url: "/" },
@@ -13,14 +14,41 @@ const liens = [
 function NavBar() {
   // etat du menu pour gerer l'affichage sur mobile
   const [menuOuvert, setMenuOuvert] = useState(false);
+  // etat de la recherche pour filtrer les produits
   return (
-    <div className="relative max-w-7xl mx-auto flex items-center px-6 py-4 mb-8">
+    <div className="bg-base-100 shadow-md px-4 py-2  items-center mb-5">
       {/* LOGO */}
-      <div className="flex-1 flex">
-        <HandCoins />
-        <h1 className="ml-2 text-sm md:text-xl text-accent font-bold">
-          SmartMarket
-        </h1>
+      <div className="relative justify-center flex items-center">
+        {/* logo */}
+        <div className="flex-1 flex">
+          <HandCoins />
+          <h1 className="ml-2 text-sm md:text-xl text-accent font-bold">
+            SmartMarket
+          </h1>
+        </div>
+        {/* barre de recherche */}
+        <div className="flex-1 mx-4">
+          <Recherche />
+        </div>
+
+        {/*ICONES  */}
+        <div className="flex-1 flex justify-end ">
+          <a href="#" className="hidden md:block mr-6 hover:text-accent transition duration-300">
+            Besoin d'aide ?
+          </a>
+          <ul className="flex gap-4">
+            <li>
+              <a href="#" className="hover:text-accent transition duration-300">
+                <ShoppingCart />
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-accent transition duration-300">
+                <UserRound />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* LIENS */}
@@ -34,27 +62,6 @@ function NavBar() {
               <Link to={lien.url}>{lien.nom}</Link>
             </li>
           ))}
-        </ul>
-      </div>
-
-      {/*ICONES  */}
-      <div className="flex-1 flex justify-end ">
-        <ul className="flex gap-4">
-          <li>
-            <a href="#" className="hover:text-accent transition duration-300">
-              <Search />
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-accent transition duration-300">
-              <ShoppingCart />
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-accent transition duration-300">
-              <UserRound />
-            </a>
-          </li>
         </ul>
       </div>
 
