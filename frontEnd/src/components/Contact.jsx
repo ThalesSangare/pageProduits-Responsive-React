@@ -2,8 +2,8 @@ import { Clock4, Mail, MapPin, Phone } from "lucide-react";
 import React, { useState } from "react";
 
 const contact = [
-  { id: 1, img: Mail, nom: "Email", texte: "support@boutique.com " },
-  { id: 2, img: Phone, nom: "Téléphone", texte: "+33 1 23 45 67 89" },
+  { id: 1, img: Mail, nom: "Email", texte: "thales@entreprise.com " },
+  { id: 2, img: Phone, nom: "Téléphone", texte: "+33 6 59 82 22 65" },
   {
     id: 3,
     img: MapPin,

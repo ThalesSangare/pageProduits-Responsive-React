@@ -6,6 +6,7 @@ import ListeProduits from "./components/ListeProduits.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Contact from "./components/Contact.jsx";
 import DetailsProduit from "./components/DetailsProduit.jsx";
+import Propos from "./components/Propos.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/produits" element={<ListeProduits />} />
         <Route path="/produits/:id" element={<DetailsProduit />} />
+        <Route path="/propos" element={<Propos />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
 

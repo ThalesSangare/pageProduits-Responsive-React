@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const liens = [
   { nom: "Accueil", url: "/" },
   { nom: "Produits", url: "/produits" },
-  { nom: "A propos", url: "/produits" },
+  { nom: "A propos", url: "/propos" },
   { nom: "Contact", url: "/contact" },
   { nom: "Connexion", url: "/contact" },
 ];

@@ -1,49 +1,3 @@
-// function Footer() {
-//   const footertexte = [
-//     {
-//       id: 1,
-//       text: "Mieux nous connaître",
-//       liste: [
-//         "A propos de nous",
-//         "Politique de confidentialité",
-//         "Conditions d'utilisation",
-//       ],
-//     },
-//     {
-//       id: 2,
-//       text: "Commandes & Retours",
-//       liste: ["Politique de retour", "Politique de livraison"],
-//     },
-//     {
-//       id: 3,
-//       text: "Contactez-nous",
-//       liste: [
-//         "+33 659 82 22 65",
-//         "contact@entreprise.com",
-//         "77 rue de la paix, 75000 Paris",
-//       ],
-//     },
-//   ];
-//   return (
-//     <div>
-//       <div className="flex justify-center gap-8 p-8">
-//         {footertexte.map((element) => (
-//           <div key={element.id} className="flex flex-col gap-4 ">
-//             <h3>{element.text}</h3>
-//             {/* <ul> */}
-//               {element.liste.map((item, index) => (
-//                 <a href="#" key={index}>{item}</a>
-//               ))}
-//             {/* </ul> */}
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Footer;
-
 import { Phone, Mail, MapPin } from "lucide-react";
 
 function Footer() {
@@ -95,7 +49,7 @@ function Footer() {
 
           <div className="flex items-center gap-3 text-sm hover:text-accent transition">
             <Mail size={18} className="text-accent" />
-            <span>contact@entreprise.com</span>
+            <span>thales@entreprise.com</span>
           </div>
 
           <div className="flex items-center gap-3 text-sm hover:text-accent transition">
