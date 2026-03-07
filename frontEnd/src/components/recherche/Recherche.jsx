@@ -14,6 +14,11 @@ function Recherche() {
         placeholder="Que recherchez-vous ?"
         className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition shadow-sm"
       />
+      {/* <div className="absolute right-3 top-1/2 -translate-y-1/2">
+        <button className="btn btn-sm btn-accent">
+          <Search className="w-5 h-5" />
+        </button>
+      </div> */}
     </div>
   );
 }
