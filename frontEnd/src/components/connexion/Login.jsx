@@ -11,15 +11,34 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className=" flex items-center justify-center ">
+      <div className="h-100 bg-gray-100 p-8 rounded-r-2xl shadow-lg w-96 hidden md:block">
+        <h3 className="text-2xl text-center font-bold">Bienvenue !</h3>
+        <p className="text-center mt-4 text-gray-600">
+          Connectez-vous pour accéder à votre compte et profiter de nos offres
+          exclusives.
+        </p>
+        <p className="text-center mt-2 text-gray-600">
+          Si vous n'avez pas encore de compte, cliquez sur "S'inscrire" pour
+          créer le vôtre et rejoindre notre communauté.
+        </p>
+        <Link
+          to="/inscription"
+          className=" text-blue-600 cursor-pointer hover:underline mt-4 block text-center font-bold"
+        >
+          S'inscrire
+        </Link>
+      </div>
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow-lg w-96"
+        className="bg-white p-8 rounded-2xl shadow-green-600 w-96 mt-10 mb-10"
       >
         <h2 className="text-2xl font-bold text-center mb-6">Connexion</h2>
-
         <div className="mb-4">
-          <label className="block text-gray-600 mb-2">Email</label>
+          <label className="block text-gray-600 mb-2">
+            Email<span className="text-red-500">*</span>
+          </label>
+
           <input
             type="email"
             placeholder="email@example.com"
@@ -31,7 +50,9 @@ export default function Login() {
         </div>
 
         <div className="mb-6">
-          <label className="block text-gray-600 mb-2">Mot de passe</label>
+          <label className="block text-gray-600 mb-2">
+            Mot de passe<span className="text-red-500">*</span>
+          </label>
           <input
             type="password"
             placeholder="********"
@@ -41,6 +62,20 @@ export default function Login() {
             required
           />
         </div>
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-1">
+            <input
+              type="checkbox"
+              id="remember"
+              className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
+
+            <label className="text-sm text-gray-600">Se souvenir de moi</label>
+          </div>
+          <a href="#" className="text-sm text-blue-600 hover:underline">
+            Mot de passe oublié ?
+          </a>
+        </div>
 
         <button
           type="submit"
@@ -49,9 +84,14 @@ export default function Login() {
           Se connecter
         </button>
 
-        <p className="text-center text-sm mt-4">
+        <p className="text-center text-sm mt-4 md:hidden">
           Pas de compte ?{" "}
-          <Link to="/inscription" className="text-blue-600 cursor-pointer">S'inscrire</Link>
+          <Link
+            to="/inscription"
+            className="text-blue-600 transition cursor-pointer hover:underline"
+          >
+            S'inscrire
+          </Link>
         </p>
       </form>
     </div>
