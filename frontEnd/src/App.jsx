@@ -7,6 +7,8 @@ import NavBar from "./components/NavBar.jsx";
 import Contact from "./components/Contact.jsx";
 import DetailsProduit from "./components/DetailsProduit.jsx";
 import Propos from "./components/Propos.jsx";
+import Login from "./components/connexion/Login.jsx";
+import Inscription from "./components/connexion/Inscription.jsx";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/produits/:id" element={<DetailsProduit />} />
         <Route path="/propos" element={<Propos />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/inscription" element={<Inscription />} />
       </Routes>
 
       <Footer />

@@ -8,7 +8,7 @@ const liens = [
   { nom: "Produits", url: "/produits" },
   { nom: "A propos", url: "/propos" },
   { nom: "Contact", url: "/contact" },
-  { nom: "Connexion", url: "/contact" },
+  { nom: "Connexion", url: "/login" },
 ];
 
 function NavBar() {

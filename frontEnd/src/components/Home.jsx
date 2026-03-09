@@ -55,19 +55,25 @@ function Home() {
       <div className="grid grid-cols-2 md:flex md:justify-center gap-2 px-4">
         {/* une section avec les produits par categorie */}
         {categories.map((categorie) => (
-          <div
-            key={categorie.id}
-            className="flex flex-col items-center justify-center
+          <button
+          key={categorie.id}
+            onClick={() => navigate("/produits")}
+            className="hover:btn-accent cursor-pointer"
+          >
+            <div
+              key={categorie.id}
+              className="flex flex-col items-center justify-center
                  text-center h-20 md:h-30 md:w-30
                  border border-zinc-200
                  rounded-xl
                  shadow-md hover:shadow-accent
                  transition-all duration-300
                  p-4"
-          >
-            {categorie.image}
-            <h3 className="items-center justify-center">{categorie.nom}</h3>
-          </div>
+            >
+              {categorie.image}
+              <h3 className="items-center justify-center">{categorie.nom}</h3>
+            </div>
+          </button>
         ))}
       </div>
       {/* =============== */}
