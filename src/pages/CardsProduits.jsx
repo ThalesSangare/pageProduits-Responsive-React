@@ -2,6 +2,7 @@ import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function CardsProduits({ produits }) {
+  // if (!produits) return null; 
   return (
     <div
       className="border border-gray-200 rounded-2xl shadow-md 
