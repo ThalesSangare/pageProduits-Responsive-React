@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer.jsx";
-import Home from "./components/Home.jsx";
-import ListeProduits from "./components/ListeProduits.jsx";
-import NavBar from "./components/NavBar.jsx";
-import Contact from "./components/Contact.jsx";
-import DetailsProduit from "./components/DetailsProduit.jsx";
-import Propos from "./components/Propos.jsx";
+
 import Login from "./components/connexion/Login.jsx";
 import Inscription from "./components/connexion/Inscription.jsx";
+import Home from "./pages/Home.jsx";
+import ListeProduits from "./pages/ListeProduits.jsx";
+import DetailsProduit from "./pages/DetailsProduit.jsx";
+import Propos from "./pages/Propos.jsx";
+import Contact from "./pages/Contact.jsx";
+import NavBar from "./pages/NavBar.jsx";
+import Footer from "./pages/Footer.jsx";
 
 function App() {
   return (
