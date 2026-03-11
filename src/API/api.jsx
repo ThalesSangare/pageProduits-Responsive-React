@@ -6,3 +6,12 @@ const api = axios.create({
 export default api;
 
 // Avec ça, appels GET, POST, PUT, DELETE se feront sur /api/produits/...
+
+
+// import axios from "axios";
+
+// const api = axios.create({
+//   baseURL: "https://fakestoreapi.com/products",
+// });
+
+// export default api;

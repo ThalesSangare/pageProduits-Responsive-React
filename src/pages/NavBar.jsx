@@ -1,7 +1,7 @@
 import { HandCoins, Menu, Search, ShoppingCart, User, UserRound } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Recherche from "./recherche/Recherche";
+import Recherche from "../components/recherche/Recherche";
 
 const liens = [
   { nom: "Accueil", url: "/" },
