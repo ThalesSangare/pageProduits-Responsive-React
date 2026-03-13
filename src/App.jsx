@@ -10,6 +10,7 @@ import Propos from "./pages/Propos.jsx";
 import Contact from "./pages/Contact.jsx";
 import NavBar from "./pages/NavBar.jsx";
 import Footer from "./pages/Footer.jsx";
+import Recherche from "./components/recherche/Recherche.jsx";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/produits" element={<ListeProduits />} />
+        <Route path="/produits" element={<ListeProduits voirRecherche ={true} />} />
         <Route path="/produits/:id" element={<DetailsProduit />} />
         <Route path="/propos" element={<Propos />} />
         <Route path="/contact" element={<Contact />} />

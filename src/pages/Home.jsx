@@ -20,6 +20,7 @@ import imgTel from "../assets/categories/tel.png";
 import imgVeste from "../assets/categories/veste.png";
 
 import { useNavigate } from "react-router-dom";
+import Recherche from "../components/recherche/Recherche";
 const categories = [
   {
     id: 1,
@@ -68,6 +69,9 @@ function Home() {
   const navigate = useNavigate();
   return (
     <div>
+      {/* <div className="w-full md:flex-1 md:px-6">
+        <Recherche />
+      </div> */}
       <div>{/* un petit slide avec des img de produits */}</div>
       <div className="grid grid-cols-2 md:flex md:justify-center gap-2 px-4">
         {/* une section avec les produits par categorie */}
@@ -102,7 +106,9 @@ function Home() {
       <div className="flex flex-col">
         {/* une section avec les produits les plus vendus */}
         <div className="flex items-center px-6 py-4">
-          <h3 className="flex text-sm md:text-2xl font-bold">Nos Meilleurs offres </h3>
+          <h3 className="flex text-sm md:text-2xl font-bold">
+            Nos Meilleurs offres{" "}
+          </h3>
           <button
             onClick={() => {
               navigate("/produits");

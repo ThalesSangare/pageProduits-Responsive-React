@@ -1,4 +1,11 @@
-import { HandCoins, Menu, Search, ShoppingCart, User, UserRound } from "lucide-react";
+import {
+  HandCoins,
+  Menu,
+  Search,
+  ShoppingCart,
+  User,
+  UserRound,
+} from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Recherche from "../components/recherche/Recherche";
@@ -51,9 +58,9 @@ function NavBar() {
           </div>
         </div>
         {/* Barre de recherche */}
-        <div className="w-full md:flex-1 md:px-6">
+        {/* <div className="w-full md:flex-1 md:px-6">
           <Recherche />
-        </div>
+        </div> */}
       </div>
 
       {/* LIENS */}
