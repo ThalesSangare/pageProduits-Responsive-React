@@ -1,14 +1,31 @@
-import { ShoppingCart } from "lucide-react";
+import { Heart, ShoppingCart } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function CardsProduits({ produits }) {
-  // if (!produits) return null; 
+  // state pour savoir si le produit est en favori ou pas
+  const [favori, setFavori] = useState(false);
+
+  // functio toggle
+  const toggleFavori = () => {
+    setFavori(!favori);
+  };
+
   return (
     <div
       className="border border-gray-200 rounded-2xl shadow-md 
                     hover:shadow-xl transition duration-300 
-                    flex flex-col overflow-hidden w-full max-w-xs "
+                    flex flex-col overflow-hidden w-full max-w-xs relative"
     >
+      {/* btn favoris */}
+      <button
+        onClick={toggleFavori}
+        className="absolute top-3 right-3 bg-white p-1.5 rounded-full shadow hover:scale-110 transition"
+      >
+        <Heart
+          className={`w-5 h-5 ${favori ? "fill-red-500 text-red-500" : "text-gray-400"}`}
+        />
+      </button>
       <Link
         to={`/produits/${produits.id}`}
         className="h-48 w-full flex items-center justify-center bg-gray-100 p-2 rounded"
