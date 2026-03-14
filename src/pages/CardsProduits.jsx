@@ -1,6 +1,7 @@
 import { Heart, ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function CardsProduits({ produits }) {
   // state pour savoir si le produit est en favori ou pas
@@ -23,9 +24,12 @@ function CardsProduits({ produits }) {
     if (favori) {
       // supp le prod des favories
       favorisStockes = favorisStockes.filter((id) => id !== produits.id);
+
+      toast.info("Produit retiré des favoris ");
     } else {
       // ajouter le prod au favoris
       favorisStockes.push(produits.id);
+      toast.success("Produit ajouté aux favoris ");
     }
     // save dans localstorage
     localStorage.setItem("favoris", JSON.stringify(favorisStockes));
