@@ -7,9 +7,10 @@ import {
   User,
   UserRound,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Recherche from "../components/recherche/Recherche";
+import { FavorisContext } from "../components/context/FavorisContext";
 
 const liens = [
   { nom: "Accueil", url: "/" },
@@ -22,6 +23,11 @@ const liens = [
 function NavBar() {
   // compteur de favoris
   const [nombreFavoris, setNombreFavoris] = useState(0);
+  const { favoris } = useContext(FavorisContext);
+
+  // compteur de panier
+  // ici items est la variable qui contient nos elements du panier dans Panier-context
+  // const { items} = useContext(PanierContext);
 
   // récupérer les favoris au chargement
   useEffect(() => {
@@ -67,9 +73,9 @@ function NavBar() {
             <Link to="/favoris" className="relative">
               <Heart className="cursor-pointer hover:text-accent transition" />
 
-              {nombreFavoris > 0 && (
+              {favoris.length > 0 && (
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5">
-                  {nombreFavoris}
+                  {favoris.length}
                 </span>
               )}
             </Link>
@@ -78,7 +84,7 @@ function NavBar() {
 
               <span className="absolute -top-4 -right-4 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5">
                 {/* ici recup le nombre de prod dans le panier */}
-                (10)
+                (0)
               </span>
             </div>
 

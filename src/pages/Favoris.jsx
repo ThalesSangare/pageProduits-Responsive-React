@@ -32,7 +32,7 @@ function Favoris() {
   return (
     <div className="max-w-6xl mx-auto p-4">
       <h2 className="text-2xl font-bold mb-6 flex gap-4">
-        Mes Produit favoris <Heart className="fill-red-500 text-red-500" />
+        Mes Produits favoris <Heart className="fill-red-500 text-red-500" />
       </h2>
 
       <div

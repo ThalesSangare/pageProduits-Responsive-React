@@ -1,58 +1,46 @@
 import { Heart, ShoppingCart } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { FavorisContext } from "../components/context/FavorisContext";
 
 function CardsProduits({ produits }) {
-  // state pour savoir si le produit est en favori ou pas
-  const [favori, setFavori] = useState(false);
+  // récupérer les favoris depuis le context
+  const { favoris, toggleFavori } = useContext(FavorisContext);
 
-  // verif au chargement si le prod est deja dans les favoris
-  useEffect(() => {
-    // recup les favoris dans le localStorage
-    const favorisStockes = JSON.parse(localStorage.getItem("favoris")) || [];
+  // vérifier si le produit est dans les favoris
+  const favori = favoris.includes(produits.id);
 
-    // verif si l'id du prod est dedans
-    if (favorisStockes.includes(produits.id)) {
-      setFavori(true);
-    }
-  }, [produits.id]);
+  // fonction clic
+  const handleFavori = () => {
+    toggleFavori(produits.id);
 
-  // functio toggle pour ajouter et retirer des favoris
-  const toggleFavori = () => {
-    let favorisStockes = JSON.parse(localStorage.getItem("favoris")) || [];
     if (favori) {
-      // supp le prod des favories
-      favorisStockes = favorisStockes.filter((id) => id !== produits.id);
-
-      toast.info("Produit retiré des favoris ");
+      toast.info("Produit retiré des favoris");
     } else {
-      // ajouter le prod au favoris
-      favorisStockes.push(produits.id);
-      toast.success("Produit ajouté aux favoris ");
+      toast.success("Produit ajouté aux favoris");
     }
-    // save dans localstorage
-    localStorage.setItem("favoris", JSON.stringify(favorisStockes));
-
-    // changer l'etat
-    setFavori(!favori);
   };
 
   return (
     <div
       className="border border-gray-200 rounded-2xl shadow-md 
-                    hover:shadow-xl transition duration-300 
-                    flex flex-col overflow-hidden w-full max-w-xs relative"
+      hover:shadow-xl transition duration-300 
+      flex flex-col overflow-hidden w-full max-w-xs relative"
     >
-      {/* btn favoris */}
+      {/*  bouton favoris */}
       <button
-        onClick={toggleFavori}
+        onClick={handleFavori}
         className="absolute top-3 right-3 bg-white p-1.5 rounded-full shadow hover:scale-110 transition"
       >
         <Heart
-          className={`w-5 h-5 ${favori ? "fill-red-500 text-red-500" : "text-gray-400"}`}
+          className={`w-5 h-5 ${
+            favori ? "fill-red-500 text-red-500" : "text-gray-400"
+          }`}
         />
       </button>
+
+      {/* image produit */}
       <Link
         to={`/produits/${produits.id}`}
         className="h-48 w-full flex items-center justify-center bg-gray-100 p-2 rounded"
@@ -60,12 +48,13 @@ function CardsProduits({ produits }) {
         <img
           src={produits.image}
           alt={produits.nom}
-          // max-h-full max-w-full object-contain pour que l'image s'adapte à son conteneur sans être déformée"
           className="max-h-full max-w-full object-contain hover:scale-105 transition duration-300"
         />
       </Link>
+
       <div className="p-4 flex flex-col gap-2">
         <h3 className="font-semibold text-lg truncate">{produits.nom}</h3>
+
         <p className="text-gray-500 text-sm line-clamp-2">
           {produits.description}
         </p>
@@ -76,12 +65,11 @@ function CardsProduits({ produits }) {
           </p>
 
           <button
-            className="text-xs sm:text-sm flex gap-2 justify-center w-full 
-             bg-black text-white py-1.5 sm:py-2 rounded-lg 
-             hover:bg-gray-800 transition"
+            className="cursor-pointer text-xs sm:text-sm flex gap-2 justify-center w-full 
+            bg-black text-white py-1.5 sm:py-2 rounded-lg hover:bg-gray-800 transition"
           >
-            <ShoppingCart className="ml-1 sm:ml-2 w-4 sm:w-5 h-4 sm:h-5" />
-            <span className="text-xs sm:text-sm">Ajouter au panier</span>
+            <ShoppingCart className="w-4 h-4" />
+            Ajouter au panier
           </button>
         </div>
       </div>
