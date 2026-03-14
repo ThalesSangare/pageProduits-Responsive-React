@@ -10,6 +10,7 @@ function Favoris() {
   useEffect(() => {
     // récupérer les ids favoris
     const favoris = JSON.parse(localStorage.getItem("favoris")) || [];
+    
     setFavorisIds(favoris);
 
     // récupérer tous les produits

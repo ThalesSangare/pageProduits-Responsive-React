@@ -3,10 +3,13 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FavorisContext } from "../components/context/FavorisContext";
+import { PanierContext } from "../components/context/PanierContext";
 
 function CardsProduits({ produits }) {
   // récupérer les favoris depuis le context
   const { favoris, toggleFavori } = useContext(FavorisContext);
+  // panier
+  const { addToCart } = useContext(PanierContext);
 
   // vérifier si le produit est dans les favoris
   const favori = favoris.includes(produits.id);
@@ -65,6 +68,15 @@ function CardsProduits({ produits }) {
           </p>
 
           <button
+            onClick={() => {
+              const existe = addToCart(produits);
+
+              if (existe) {
+                toast.info("Produit déjà dans le panier");
+              } else {
+                toast.success("Produit ajouté au panier");
+              }
+            }}
             className="cursor-pointer text-xs sm:text-sm flex gap-2 justify-center w-full 
             bg-black text-white py-1.5 sm:py-2 rounded-lg hover:bg-gray-800 transition"
           >

@@ -12,11 +12,11 @@ import NavBar from "./pages/NavBar.jsx";
 import Footer from "./pages/Footer.jsx";
 import { ToastContainer } from "react-toastify";
 import Favoris from "./pages/Favoris.jsx";
-import { FavorisProvider } from "./components/context/FavorisContext.jsx";
+import Panier from "./pages/Panier.jsx";
 function App() {
   return (
-    <FavorisProvider>
-      {/* <> */}
+
+        <>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -30,12 +30,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/inscription" element={<Inscription />} />
           <Route path="/favoris" element={<Favoris />} />
+          <Route path="/panier" element={<Panier />} />
         </Routes>
         <ToastContainer position="bottom-right" autoClose={200} />
 
         <Footer />
-      {/* </> */}
-    </FavorisProvider>
+        </> 
+
   );
 }
 

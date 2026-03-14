@@ -7,10 +7,10 @@ import {
   User,
   UserRound,
 } from "lucide-react";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import Recherche from "../components/recherche/Recherche";
 import { FavorisContext } from "../components/context/FavorisContext";
+import { PanierContext } from "../components/context/PanierContext";
 
 const liens = [
   { nom: "Accueil", url: "/" },
@@ -22,18 +22,10 @@ const liens = [
 
 function NavBar() {
   // compteur de favoris
-  const [nombreFavoris, setNombreFavoris] = useState(0);
   const { favoris } = useContext(FavorisContext);
 
   // compteur de panier
-  // ici items est la variable qui contient nos elements du panier dans Panier-context
-  // const { items} = useContext(PanierContext);
-
-  // récupérer les favoris au chargement
-  useEffect(() => {
-    const favoris = JSON.parse(localStorage.getItem("favoris")) || [];
-    setNombreFavoris(favoris.length);
-  }, []);
+  const { cart } = useContext(PanierContext);
 
   // etat du menu pour gerer l'affichage sur mobile
   const [menuOuvert, setMenuOuvert] = useState(false);
@@ -79,14 +71,16 @@ function NavBar() {
                 </span>
               )}
             </Link>
-            <div className="relative">
+
+            <Link to="/panier" className="relative">
               <ShoppingCart className="cursor-pointer hover:text-accent transition" />
 
-              <span className="absolute -top-4 -right-4 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5">
-                {/* ici recup le nombre de prod dans le panier */}
-                (0)
-              </span>
-            </div>
+              {cart.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs  rounded-full px-1.5 py-0.5">
+                  {cart.length}
+                </span>
+              )}
+            </Link>
 
             <UserRound className="cursor-pointer hover:text-accent transition" />
           </div>

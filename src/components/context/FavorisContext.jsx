@@ -1,5 +1,9 @@
 import { createContext, useEffect, useState } from "react";
-
+/**
+ *  cette ligne en commentaires en bas enleve l'avertissement qui est sur PanierContext
+ * 
+ */
+/* eslint-disable react-refresh/only-export-components */ 
 export const FavorisContext = createContext();
 export function FavorisProvider({ children }) {
   //recup les favoris depuis localStorag
