@@ -1,13 +1,36 @@
 import { Heart, ShoppingCart } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function CardsProduits({ produits }) {
   // state pour savoir si le produit est en favori ou pas
   const [favori, setFavori] = useState(false);
 
-  // functio toggle
+  // verif au chargement si le prod est deja dans les favoris
+  useEffect(() => {
+    // recup les favoris dans le localStorage
+    const favorisStockes = JSON.parse(localStorage.getItem("favoris")) || [];
+
+    // verif si l'id du prod est dedans
+    if (favorisStockes.includes(produits.id)) {
+      setFavori(true);
+    }
+  }, [produits.id]);
+
+  // functio toggle pour ajouter et retirer des favoris
   const toggleFavori = () => {
+    let favorisStockes = JSON.parse(localStorage.getItem("favoris")) || [];
+    if (favori) {
+      // supp le prod des favories
+      favorisStockes = favorisStockes.filter((id) => id !== produits.id);
+    } else {
+      // ajouter le prod au favoris
+      favorisStockes.push(produits.id);
+    }
+    // save dans localstorage
+    localStorage.setItem("favoris", JSON.stringify(favorisStockes));
+
+    // changer l'etat
     setFavori(!favori);
   };
 

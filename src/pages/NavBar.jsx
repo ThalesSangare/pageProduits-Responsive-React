@@ -1,5 +1,6 @@
 import {
   HandCoins,
+  Heart,
   Menu,
   Search,
   ShoppingCart,
@@ -53,6 +54,7 @@ function NavBar() {
               Besoin d'aide ?
             </a>
 
+            <Heart className="cursor-pointer hover:text-accent transition" />
             <ShoppingCart className="cursor-pointer hover:text-accent transition" />
             <UserRound className="cursor-pointer hover:text-accent transition" />
           </div>
