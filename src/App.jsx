@@ -13,11 +13,13 @@ import Footer from "./pages/Footer.jsx";
 import { ToastContainer } from "react-toastify";
 import Favoris from "./pages/Favoris.jsx";
 import Panier from "./pages/Panier.jsx";
+import Carrousel from "./components/Carrousel.jsx";
 function App() {
   return (
 
         <>
-        <NavBar />
+        <Carrousel/>
+        {/* <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -34,7 +36,7 @@ function App() {
         </Routes>
         <ToastContainer position="bottom-right" autoClose={200} />
 
-        <Footer />
+        <Footer /> */}
         </> 
 
   );
