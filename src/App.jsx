@@ -13,32 +13,29 @@ import Footer from "./pages/Footer.jsx";
 import { ToastContainer } from "react-toastify";
 import Favoris from "./pages/Favoris.jsx";
 import Panier from "./pages/Panier.jsx";
-import Carrousel from "./components/Carrousel.jsx";
 function App() {
   return (
+    <>
+      <NavBar />
 
-        <>
-        <Carrousel/>
-        {/* <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/produits"
-            element={<ListeProduits voirRecherche={true} />}
-          />
-          <Route path="/produits/:id" element={<DetailsProduit />} />
-          <Route path="/propos" element={<Propos />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/inscription" element={<Inscription />} />
-          <Route path="/favoris" element={<Favoris />} />
-          <Route path="/panier" element={<Panier />} />
-        </Routes>
-        <ToastContainer position="bottom-right" autoClose={200} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/produits"
+          element={<ListeProduits voirRecherche={true} />}
+        />
+        <Route path="/produits/:id" element={<DetailsProduit />} />
+        <Route path="/propos" element={<Propos />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/inscription" element={<Inscription />} />
+        <Route path="/favoris" element={<Favoris />} />
+        <Route path="/panier" element={<Panier />} />
+      </Routes>
+      <ToastContainer position="bottom-right" autoClose={200} />
 
-        <Footer /> */}
-        </> 
-
+      <Footer />
+    </>
   );
 }
 

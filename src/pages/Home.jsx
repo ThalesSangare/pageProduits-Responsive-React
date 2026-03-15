@@ -21,6 +21,7 @@ import imgVeste from "../assets/categories/veste.png";
 
 import { useNavigate } from "react-router-dom";
 import Recherche from "../components/recherche/Recherche";
+import Carrousel from "../components/Carrousel";
 const categories = [
   {
     id: 1,
@@ -32,16 +33,6 @@ const categories = [
   { id: 4, nom: "Vetement", image: imgVeste },
   { id: 5, nom: "Chaussure", image: imgChaussure },
   { id: 6, nom: "Montre", image: imgMontre },
-  // {
-  //   id: 1,
-  //   nom: "Telephone",
-  //   image: <Smartphone size={24} />,
-  // },
-  // { id: 2, nom: "Ordinateur", image: <Laptop size={24} /> },
-  // { id: 3, nom: "Accessoires", image: <Video size={24} /> },
-  // { id: 4, nom: "Vetement", image: <ShoppingBag size={24} /> },
-  // { id: 5, nom: "Chaussure", image: <ShoppingBasket size={24} /> },
-  // { id: 6, nom: "Maison", image: <House size={24} /> },
 ];
 
 const services = [
@@ -69,10 +60,7 @@ function Home() {
   const navigate = useNavigate();
   return (
     <div>
-      {/* <div className="w-full md:flex-1 md:px-6">
-        <Recherche />
-      </div> */}
-      <div>{/* un petit slide avec des img de produits */}</div>
+      <Carrousel />
       <div className="grid grid-cols-2 md:flex md:justify-center gap-2 px-4">
         {/* une section avec les produits par categorie */}
         {categories.map((categorie) => (
